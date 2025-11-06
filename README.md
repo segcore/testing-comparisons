@@ -4,15 +4,16 @@ How much do testing frameworks cost?
 
 | Framework         | Language      | Base compile time (s) | Compile time for 1000 asserts (s) | Compile time for 100 files (s) |
 | ---               | ---           | ---                   | ---                               | ---                            |
-| Boost.Test        | C++           | 5.8                   | 7.5 (+1.7)                        | 10.43                          |
-| Boost.Test static | C++           | 0.8                   | 2.4 (+1.6)                        |  9.71                          |
-| GoogleTest        | C++           | 0.9                   | 2.1 (+1.2)                        | 10.83                          |
+| Boost.Test        | C++           | 5.8                   | 7.5 (+1.7)                        | 10.4                           |
+| Boost.Test static | C++           | 0.8                   | 2.4 (+1.6)                        |  9.7                           |
+| GoogleTest        | C++           | 0.9                   | 2.1 (+1.2)                        | 10.8                           |
 | testing.h         | C             | 0.06                  | 0.13 (+0.07)                      |  0.51                          |
 | Unity             | C             | 0.07                  | 0.10 (+0.03)                      |  0.60                          |
 
 
-## Other notes
+## Notes
 
+* Building the 100 files is in parallel with ninja
 * GoogleTest can expose its individual tests to ctest, so works well stand-alone and with ctest.
 * Boost.Test seems intended to just be run directly
 * testing.h is intended to be run with a test-runner such as ctest (or `for x in tests/*; do ./$x; done`)
