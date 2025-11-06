@@ -8,6 +8,7 @@ How much do testing frameworks cost?
 | Boost.Test static | C++           | 0.8                   | 2.4 (+1.6)                        |  9.71                          |
 | GoogleTest        | C++           | 0.9                   | 2.1 (+1.2)                        | 10.83                          |
 | testing.h         | C             | 0.06                  | 0.13 (+0.07)                      |  0.51                          |
+| Unity             | C             | 0.07                  | 0.10 (+0.03)                      |  0.60                          |
 
 
 ## Other notes
@@ -19,14 +20,14 @@ How much do testing frameworks cost?
 
 ## CTest
 
-When using CMake as the build system, adding CTest as a test runner takes very
+If using CMake as the build system, adding CTest as a test runner takes very
 little effort. Much of the functionality which is built-in to GoogleTest and
 Boost.Test is also available in CTest. This means that the testing framework
 can be simpler and just focus on testing (which makes it compile faster too).
 
 Some CTest features include:
 * Run all tests in one command
-* Select a subset of tests to run
+* Run a subset of tests
 * Run tests in parallel
 * Randomize test order
 * Test timeouts
