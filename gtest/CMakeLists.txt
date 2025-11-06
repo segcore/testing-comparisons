@@ -1,0 +1,133 @@
+cmake_minimum_required(VERSION 3.14)
+project(my_project)
+
+# GoogleTest requires at least C++17
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+include(CTest)
+function(test target_name)
+    add_executable("${target_name}" "${ARGN}")
+    target_link_libraries("${target_name}" PRIVATE GTest::gtest_main)
+    # Don't add_test, because gtest_discover_tests adds them
+    # add_test(NAME "${target_name}" COMMAND "${target_name}")
+endfunction()
+
+test(t1 t1.cpp)
+test(t1000 t1000.cpp)
+test(files
+    files/f1.cpp
+    files/f2.cpp
+    files/f3.cpp
+    files/f4.cpp
+    files/f5.cpp
+    files/f6.cpp
+    files/f7.cpp
+    files/f8.cpp
+    files/f9.cpp
+    files/f10.cpp
+    files/f11.cpp
+    files/f12.cpp
+    files/f13.cpp
+    files/f14.cpp
+    files/f15.cpp
+    files/f16.cpp
+    files/f17.cpp
+    files/f18.cpp
+    files/f19.cpp
+    files/f20.cpp
+    files/f21.cpp
+    files/f22.cpp
+    files/f23.cpp
+    files/f24.cpp
+    files/f25.cpp
+    files/f26.cpp
+    files/f27.cpp
+    files/f28.cpp
+    files/f29.cpp
+    files/f30.cpp
+    files/f31.cpp
+    files/f32.cpp
+    files/f33.cpp
+    files/f34.cpp
+    files/f35.cpp
+    files/f36.cpp
+    files/f37.cpp
+    files/f38.cpp
+    files/f39.cpp
+    files/f40.cpp
+    files/f41.cpp
+    files/f42.cpp
+    files/f43.cpp
+    files/f44.cpp
+    files/f45.cpp
+    files/f46.cpp
+    files/f47.cpp
+    files/f48.cpp
+    files/f49.cpp
+    files/f50.cpp
+    files/f51.cpp
+    files/f52.cpp
+    files/f53.cpp
+    files/f54.cpp
+    files/f55.cpp
+    files/f56.cpp
+    files/f57.cpp
+    files/f58.cpp
+    files/f59.cpp
+    files/f60.cpp
+    files/f61.cpp
+    files/f62.cpp
+    files/f63.cpp
+    files/f64.cpp
+    files/f65.cpp
+    files/f66.cpp
+    files/f67.cpp
+    files/f68.cpp
+    files/f69.cpp
+    files/f70.cpp
+    files/f71.cpp
+    files/f72.cpp
+    files/f73.cpp
+    files/f74.cpp
+    files/f75.cpp
+    files/f76.cpp
+    files/f77.cpp
+    files/f78.cpp
+    files/f79.cpp
+    files/f80.cpp
+    files/f81.cpp
+    files/f82.cpp
+    files/f83.cpp
+    files/f84.cpp
+    files/f85.cpp
+    files/f86.cpp
+    files/f87.cpp
+    files/f88.cpp
+    files/f89.cpp
+    files/f90.cpp
+    files/f91.cpp
+    files/f92.cpp
+    files/f93.cpp
+    files/f94.cpp
+    files/f95.cpp
+    files/f96.cpp
+    files/f97.cpp
+    files/f98.cpp
+    files/f99.cpp
+    files/f100.cpp
+)
+
+include(GoogleTest)
+gtest_discover_tests(t1)
+gtest_discover_tests(t1000)
+gtest_discover_tests(files)
